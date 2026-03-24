@@ -54,7 +54,7 @@ export default function App() {
     let priceItem = "";
     
     if (formData.size) {
-      const [sizeStr, ...rest] = formData.size.split('-');
+      const [sizeStr] = formData.size.split('-');
       const isWithFrame = formData.size.includes('with-frame');
       const prod = products.find(p => p.size === sizeStr);
       
