@@ -134,6 +134,15 @@ a {
   position: relative;
 }
 
+.hero-container {
+  height: 600px;
+}
+
+.hero-img {
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Pencil sketch container for the custom image reveal */
 .sketch-container {
   position: relative;
@@ -187,6 +196,36 @@ a {
   height: 50px;
   background: rgba(187, 166, 217, 0.4);
 }
+.main-nav {
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: rgba(244, 240, 250, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 8rem;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.main-footer {
+  background: var(--color-text-dark);
+  color: var(--color-white);
+  padding: 6rem 5% 3rem;
+}
 
 /* Responsive Layout Classes */
 .grid-2 {
@@ -231,6 +270,16 @@ a {
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    height: auto;
+  }
+  
+  .hero-img {
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -238,6 +287,25 @@ a {
   
   .section {
     padding: 6rem 5% 4rem; /* keep top padding for nav */
+  }
+
+  .main-nav {
+    padding: 1rem 5%;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    display: block;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .main-footer {
+    padding: 4rem 5% 2rem;
   }
   
   h1 {

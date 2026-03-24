@@ -161,7 +161,7 @@ export default function App() {
       />
       
       {/* Navigation */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'fixed', width: '100%', zIndex: 100, background: 'rgba(244, 240, 250, 0.8)', backdropFilter: 'blur(10px)' }}>
+      <nav className="main-nav">
         <h2 style={{ fontSize: '1.5rem', margin: 0 }}>JODA Arts.</h2>
         <div className="nav-links">
           <a href="#how-it-works" style={{ fontWeight: 500, transition: '0.3s' }}>Process</a>
@@ -173,7 +173,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '8rem' }}>
+      <section className="section hero-section">
         <div className="grid-2 align-center">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -204,12 +204,13 @@ export default function App() {
             </div>
           </motion.div>
           <motion.div 
+            className="hero-container"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
-            style={{ position: 'relative', height: '600px', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--shadow-hover)' }}
+            style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--shadow-hover)' }}
           >
-            <img src="/WhatsApp Image 2026-03-16 at 8.42.58 PM.jpeg" alt="Hero Art" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%) contrast(1.2)' }} />
+            <img className="hero-img" src="/WhatsApp Image 2026-03-16 at 8.42.58 PM.jpeg" alt="Hero Art" style={{ width: '100%', filter: 'grayscale(100%) contrast(1.2)' }} />
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)' }} />
           </motion.div>
         </div>
@@ -254,7 +255,7 @@ export default function App() {
           <p style={{ marginTop: '1rem' }}>Priced reflecting hours of dedicated craftsmanship.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem' }}>
           {products.map((p, i) => (
             <motion.div 
               key={i}
@@ -389,7 +390,7 @@ export default function App() {
           >
             <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem' }}>Order Details</h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="form-grid-2">
               <div>
                 <label style={{ display: 'block', fontSize: '0.9rem', marginBottom: '0.5rem', color: 'var(--color-lavender-dark)' }}>Your Name</label>
                 <input required name="name" type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} style={{ width: '100%', padding: '1rem', background: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '8px', color: 'var(--color-white)', fontFamily: 'var(--font-body)', outline: 'none' }} placeholder="John Doe" />
@@ -468,7 +469,7 @@ export default function App() {
           <h2>Emotional Impact</h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
           {testimonials.map((t, i) => (
             <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                <span style={{ fontSize: '4rem', fontFamily: 'var(--font-heading)', color: 'var(--color-lavender-dark)', lineHeight: 0.5 }}>"</span>
@@ -480,8 +481,8 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer style={{ background: 'var(--color-text-dark)', color: 'var(--color-white)', padding: '6rem 5% 3rem' }}>
-         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
+      <footer className="main-footer">
+         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '4rem', marginBottom: '4rem' }}>
             <div>
                <h2 style={{ color: 'var(--color-white)', fontSize: '2rem', marginBottom: '1rem' }}>JODA Arts.</h2>
                <p style={{ color: 'var(--color-lavender-dark)', fontSize: '0.9rem' }}>Premium custom black and white pencil artworks. Crafted with dedication and soul.</p>
