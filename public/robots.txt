@@ -1,0 +1,15 @@
+# robots.txt for JODA Arts
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://joda-arts.com/sitemap.xml
